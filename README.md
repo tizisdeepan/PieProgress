@@ -26,3 +26,26 @@ allprojects {
     }
 }
 ```
+
+### [3] Use PieProgress in your layout.xml
+```xml
+<com.deepan.pieprogress.PieProgress
+            android:id="@+id/pieProgress"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:progressColor="@color/white"/>
+```
+
+Voila! You have implemented an awesome Pie Progress for your Android Project now!
+
+Developed By
+------------
+
+* Deepan Elango - <tizisdeepan@gmail.com>
+
+<a href="https://twitter.com/tizisdeepan">
+  <img alt="Follow me on Twitter" src="./screenshots/twitter.png" />
+</a>
+<a href="https://www.linkedin.com/in/tizisdeepan/">
+  <img alt="Add me to Linkedin" src="./screenshots/linkedin.png" />
+</a>
