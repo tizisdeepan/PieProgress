@@ -11,7 +11,7 @@ Pie Progress is a type of circular progress view similar to the one that you can
 ### [1] In your app module gradle file
 ```gradle
 dependencies {
-    implementation 'com.github.tizisdeepan:pieprogress:1.0.0'
+    implementation 'com.github.tizisdeepan:pieprogress:1.0.1'
 }
 ```
 
