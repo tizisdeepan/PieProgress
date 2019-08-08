@@ -1,27 +1,22 @@
 package com.deepan.pieprogress
 
 import android.animation.Animator
+import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
+import android.animation.PropertyValuesHolder
 import android.content.Context
 import android.graphics.Canvas
-import android.graphics.Color
 import android.graphics.Paint
 import android.graphics.RectF
 import android.os.Build
 import android.util.AttributeSet
 import android.view.View
-import android.view.animation.Animation
-import android.view.animation.AnimationSet
-import android.view.animation.ScaleAnimation
 import kotlin.properties.Delegates
-import android.animation.AnimatorSet
-import android.animation.PropertyValuesHolder
 
 
 @Suppress("DEPRECATION")
 class PieProgress : View {
 
-    private var progressColor = Color.parseColor("#ffffff")
     private val progressPaint = Paint(Paint.ANTI_ALIAS_FLAG)
     private val tickPaint = Paint(Paint.ANTI_ALIAS_FLAG)
     private val strokePaint = Paint(Paint.ANTI_ALIAS_FLAG)
@@ -49,7 +44,7 @@ class PieProgress : View {
     private fun init(context: Context, attrs: AttributeSet?, defStyleAttr: Int, defStyleRes: Int) {
         val attributes = context.theme.obtainStyledAttributes(attrs, R.styleable.PieProgress, defStyleAttr, defStyleRes)
         try {
-            progressColor = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            val progressColor = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 attributes.getColor(
                     R.styleable.PieProgress_progressColor, context.resources.getColor(R.color.white, context.theme)
                 )
@@ -83,14 +78,10 @@ class PieProgress : View {
 
     override fun onDraw(canvas: Canvas?) {
         if (!isCompleted) {
-            canvas?.drawCircle(
-                rect.centerX(), rect.centerY(), (width / 2 - strokePaint.strokeWidth), strokePaint
-            )
+            canvas?.drawCircle(rect.centerX(), rect.centerY(), (width / 2 - strokePaint.strokeWidth), strokePaint)
             canvas?.drawArc(rect, 270f, (progress * 3.6).toFloat(), true, progressPaint)
         } else {
-            canvas?.drawCircle(
-                rect.centerX(), rect.centerY(), (width / 2 - strokePaint.strokeWidth), strokePaint
-            )
+            canvas?.drawCircle(rect.centerX(), rect.centerY(), (width / 2 - strokePaint.strokeWidth), strokePaint)
             canvas?.drawLine(
                 width / 4f, (height / 2f) + 10f, (width / 8f) * 3.5f, ((height / 8f) * 5f) + 10f, tickPaint
             )
