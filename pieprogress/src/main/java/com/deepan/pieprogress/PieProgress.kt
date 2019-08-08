@@ -100,9 +100,6 @@ class PieProgress : View {
         this.progress = progress
         invalidate()
         if (progress.toInt() == 100) {
-            val firstBounce = ObjectAnimator.ofPropertyValuesHolder(
-                this, PropertyValuesHolder.ofFloat(SCALE_X, 1.1f), PropertyValuesHolder.ofFloat(SCALE_Y, 1.1f)
-            ).setDuration(100)
             val scaleDown = ObjectAnimator.ofPropertyValuesHolder(
                 this, PropertyValuesHolder.ofFloat(SCALE_X, 0f), PropertyValuesHolder.ofFloat(SCALE_Y, 0f)
             ).setDuration(200)
@@ -118,7 +115,7 @@ class PieProgress : View {
                 }
             })
             val animatorSet = AnimatorSet()
-            animatorSet.playSequentially(firstBounce, scaleDown, scaleUp)
+            animatorSet.playSequentially(scaleDown, scaleUp)
             animatorSet.start()
         }
     }
