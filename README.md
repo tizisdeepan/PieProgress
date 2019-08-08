@@ -36,6 +36,12 @@ allprojects {
             app:progressColor="@color/white"/>
 ```
 
+### [4] Set progress of PieProgress from your activity
+```kotlin
+    //setProgress(progress: Float)
+    pieProgress.setProgress(progress)
+```
+
 Voila! You have implemented an awesome Pie Progress for your Android Project now!
 
 Developed By
