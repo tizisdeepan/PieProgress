@@ -4,6 +4,7 @@ import android.animation.Animator
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
 import android.animation.PropertyValuesHolder
+import android.annotation.TargetApi
 import android.content.Context
 import android.graphics.Canvas
 import android.graphics.Paint
@@ -13,8 +14,6 @@ import android.util.AttributeSet
 import android.view.View
 import kotlin.properties.Delegates
 
-
-@Suppress("DEPRECATION")
 class PieProgress : View {
 
     private val progressPaint = Paint(Paint.ANTI_ALIAS_FLAG)
@@ -41,18 +40,13 @@ class PieProgress : View {
         init(context, attrs, defStyleAttr, -1)
     }
 
+    @TargetApi(Build.VERSION_CODES.M)
     private fun init(context: Context, attrs: AttributeSet?, defStyleAttr: Int, defStyleRes: Int) {
         val attributes = context.theme.obtainStyledAttributes(attrs, R.styleable.PieProgress, defStyleAttr, defStyleRes)
         try {
-            val progressColor = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                attributes.getColor(
-                    R.styleable.PieProgress_progressColor, context.resources.getColor(R.color.white, context.theme)
-                )
-            } else {
-                attributes.getColor(
-                    R.styleable.PieProgress_progressColor, context.resources.getColor(R.color.white)
-                )
-            }
+            val progressColor = attributes.getColor(
+                R.styleable.PieProgress_progressColor, context.resources.getColor(R.color.white, context.theme)
+            )
             progressPaint.apply {
                 color = progressColor
             }
