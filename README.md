@@ -3,8 +3,8 @@
 [![](https://jitpack.io/v/tizisdeepan/pieprogress.svg)](https://jitpack.io/#tizisdeepan/pieprogress)
 
 <table>
-    <tr><td align="center"><img src="https://github.com/tizisdeepan/pieprogress/blob/master/Screenshots/ss1.png" alt="Single Selection Mode" width="100%"></td>
-    <td align="center"><img src="https://github.com/tizisdeepan/pieprogress/blob/master/Screenshots/ss2.png" alt="Range Selection Mode" width="100%"></td>
+    <tr><td align="center"><img src="./Screenshots/ss1.png" alt="Single Selection Mode" width="100%"></td>
+    <td align="center"><img src="./Screenshots/ss2.png" alt="Range Selection Mode" width="100%"></td>
 </table>
 
 # What is Pie Progress?
@@ -44,8 +44,8 @@ Developed By
 * Deepan Elango - <tizisdeepan@gmail.com>
 
 <a href="https://twitter.com/tizisdeepan">
-  <img alt="Follow me on Twitter" src="./screenshots/twitter.png" />
+  <img alt="Follow me on Twitter" src="./Screenshots/twitter.png" />
 </a>
 <a href="https://www.linkedin.com/in/tizisdeepan/">
-  <img alt="Add me to Linkedin" src="./screenshots/linkedin.png" />
+  <img alt="Add me to Linkedin" src="./Screenshots/linkedin.png" />
 </a>
