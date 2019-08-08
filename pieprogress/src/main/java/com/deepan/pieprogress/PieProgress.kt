@@ -7,6 +7,7 @@ import android.graphics.Paint
 import android.graphics.RectF
 import android.os.Build
 import android.util.AttributeSet
+import android.util.Log
 import android.view.View
 
 @Suppress("DEPRECATION")
@@ -19,6 +20,7 @@ class PieProgress : View {
         RectF(0f, 0f, width.toFloat() - strokePaint.strokeWidth, height.toFloat() - strokePaint.strokeWidth)
     }
     private var progress = 0f
+    var mListener: PieProgressListener? = null
 
     constructor(context: Context) : super(context) {
         init(context, null, -1, -1)
@@ -74,6 +76,11 @@ class PieProgress : View {
 
     fun setProgress(progress: Float) {
         this.progress = progress
+        if (progress.toInt() == 100) mListener?.onProgressEnd()
         invalidate()
+    }
+
+    fun setListener(progressListener: PieProgressListener) {
+        this.mListener = progressListener
     }
 }
