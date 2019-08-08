@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
         val handler = Handler()
         for (i in 0..100) {
             handler.postDelayed({
-                pieProgress.setProgress(1f)
+                pieProgress.setProgress(i.toFloat())
             }, 30 * i.toLong())
         }
     }

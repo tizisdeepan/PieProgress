@@ -73,7 +73,7 @@ class PieProgress : View {
     }
 
     fun setProgress(progress: Float) {
-        this.progress += progress
+        this.progress = progress
         invalidate()
     }
 }
