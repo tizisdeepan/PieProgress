@@ -47,6 +47,9 @@ class PieProgress : View {
             val progressColor = attributes.getColor(
                 R.styleable.PieProgress_progressColor, context.resources.getColor(R.color.white, context.theme)
             )
+            val strokeWidthAttribute = attributes.getDimension(
+                R.styleable.PieProgress_strokeWidth, context.resources.getDimension(R.dimen.width_circle_stroke)
+            )
             progressPaint.apply {
                 color = progressColor
             }
@@ -54,12 +57,12 @@ class PieProgress : View {
                 color = progressColor
                 style = Paint.Style.STROKE
                 strokeCap = Paint.Cap.ROUND
-                strokeWidth = resources.getDimension(R.dimen.width_circle_stroke)
+                strokeWidth = strokeWidthAttribute
             }
             strokePaint.apply {
                 color = progressColor
                 style = Paint.Style.STROKE
-                strokeWidth = resources.getDimension(R.dimen.width_circle_stroke)
+                strokeWidth = strokeWidthAttribute
             }
         } finally {
             attributes.recycle()
